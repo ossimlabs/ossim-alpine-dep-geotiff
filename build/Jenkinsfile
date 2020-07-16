@@ -57,12 +57,9 @@ node(POD_LABEL){
     }
     stage ("Checkout geotiff")
     {
-      container('git') 
-      {
         sh """
           ./checkout-geotiff.sh
         """
-      }
     }
     stage (" Build geotiff")
     {
