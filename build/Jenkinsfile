@@ -57,29 +57,23 @@ node(POD_LABEL){
         }
         load "common-variables.groovy"
     }
-    stage (" Checkout ffmpeg")
+    stage (" Checkout geotiff")
     {
         container('git') 
         {
-          dir("ossim-private"){
-            git(
-                url: 'git@github.com:Maxar-Corp/ossim-private.git',
-                credentialsId: 'ossimlabs-minion-ssh-key',
-                branch: "master"
-            )
           sh """
-            git checkout "${KAKADU_VERSION}"
+            ./checkout-geotiff.sh
           """
           }
         }
     }
-    stage (" Build ffmpeg")
+    stage (" Build geotiff")
     {
         container('builder') 
         {
             sh """
             ls
-              ./build-kakadu.sh
+              ./build-geotiff.sh
             """
         }
     }
