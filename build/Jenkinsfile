@@ -82,7 +82,7 @@ node(POD_LABEL){
         {
             sh """
               ./build-geotiff.sh
-              tar -czvf alpine-geos.tgz /usr/local
+              tar -czvf alpine-geotiff.tgz /usr/local
             """
         }
     }
@@ -90,7 +90,7 @@ node(POD_LABEL){
     stage("Publish"){
         withCredentials([usernameColonPassword(credentialsId: 'nexusCredentials', variable: 'NEXUS_CREDENTIALS')])
           {
-            sh "curl -v -u ${NEXUS_CREDENTIALS} --upload-file alpine-geos.tgz https://nexus.ossim.io/repository/ossim-dependencies/"
+            sh "curl -v -u ${NEXUS_CREDENTIALS} --upload-file alpine-geotoff.tgz https://nexus.ossim.io/repository/ossim-dependencies/"
           }
     }
     
