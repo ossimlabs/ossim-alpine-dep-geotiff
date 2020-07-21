@@ -72,7 +72,6 @@ node(POD_LABEL){
         container('builder') 
         {
             sh """
-            ls
               ./build-proj.sh
             """
         }
@@ -82,10 +81,17 @@ node(POD_LABEL){
         container('builder') 
         {
             sh """
-            ls
               ./build-geotiff.sh
+              tar -czvf alpine-geos.tgz /usr/local
             """
         }
+    }
+    
+    stage("Publish"){
+        withCredentials([usernameColonPassword(credentialsId: 'nexusCredentials', variable: 'NEXUS_CREDENTIALS')])
+          {
+            sh "curl -v -u ${NEXUS_CREDENTIALS} --upload-file alpine-geos.tgz https://nexus.ossim.io/repository/ossim-dependencies/"
+          }
     }
     
 	stage("Clean Workspace"){
