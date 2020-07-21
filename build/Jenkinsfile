@@ -90,7 +90,7 @@ node(POD_LABEL){
     stage("Publish"){
         withCredentials([usernameColonPassword(credentialsId: 'nexusCredentials', variable: 'NEXUS_CREDENTIALS')])
           {
-            sh "curl -v -u ${NEXUS_CREDENTIALS} --upload-file alpine-geotoff.tgz https://nexus.ossim.io/repository/ossim-dependencies/"
+            sh "curl -v -u ${NEXUS_CREDENTIALS} --upload-file alpine-geotiff.tgz https://nexus.ossim.io/repository/ossim-dependencies/"
           }
     }
     
