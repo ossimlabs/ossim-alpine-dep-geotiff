@@ -82,7 +82,8 @@ node(POD_LABEL){
         {
             sh """
               ./build-geotiff.sh
-              tar -czvf alpine-geotiff.tgz /usr/local
+              cd /usr/local
+              tar -czvf alpine-geotiff.tgz *
             """
         }
     }
