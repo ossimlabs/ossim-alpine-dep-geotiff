@@ -55,18 +55,18 @@ node(POD_LABEL){
         }
         load "common-variables.groovy"
     }
-    stage ("Checkout proj")
-    {
-        sh """
-          ./checkout-proj.sh
-        """
-    }
-    stage ("Checkout geotiff")
-    {
-        sh """
-          ./checkout-geotiff.sh
-        """
-    }
+//    stage ("Checkout proj")
+//    {
+//        sh """
+//          ./checkout-proj.sh
+//        """
+//    }
+//    stage ("Checkout geotiff")
+//    {
+//        sh """
+//          ./checkout-geotiff.sh
+//        """
+//    }
     stage (" Build proj")
     {
         container('builder') 
