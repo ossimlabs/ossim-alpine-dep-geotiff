@@ -64,36 +64,6 @@ install_manifest.txt
 /test-driver
 /Testing
 
-# data
-/data/all.sql.in
-/data/proj.db
-/data/*.ct2
-/data/*.dat
-/data/*.gsb
-/data/*.gtx
-/data/*.lla
-/data/*.pol
-/data/*.zip
-/data/DK
-/data/FL
-/data/FO
-/data/GL
-/data/MD
-/data/NKG
-/data/README*
-/data/TN
-/data/WI
-/data/WO
-/data/alaska
-/data/conus
-/data/hawaii
-/data/null
-/data/prvi
-/data/stgeorge
-/data/stlrnc
-/data/stpaul
-/data/tv_out
-
 # docs
 tmp_breathe
 /docs/.doxygen_up_to_date
